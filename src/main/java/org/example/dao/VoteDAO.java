@@ -9,6 +9,10 @@ public class VoteDAO {
     public void create(VoteDTO vote){
         votes.add(vote);
     }
+    public ArrayList<VoteDTO> read(){
+        return votes;
+    }
+
 
 
 

@@ -9,19 +9,19 @@ import java.util.Map;
 public class VoteService implements IVoteService {
     private volatile static VoteService instance;
 
-    public void save(Map<String, String[]> map) throws IOException {
+    public void save(Map<String, String[]> map) throws Exception {
         VoteDTO voteDTO = new VoteDTO();
 
         String[] s = map.get("artist");
         if (s.length != 1) {
-            throw new IOException();
+            throw new Exception();
         }
         int artistID = Integer.parseInt(s[0]);
         voteDTO.setArtist(artistID);
 
         String[] v = map.get("genre");
         if (v.length < 3 || v.length > 5) {
-            throw new IOException();
+            throw new Exception();
         }
         int[] genreIDs = new int[v.length];
         for (int i = 0; i < v.length; i++) {
@@ -31,7 +31,7 @@ public class VoteService implements IVoteService {
 
         String[] t = map.get("text");
         if (t.length != 1) {
-            throw new IOException();
+            throw new Exception();
         }
         voteDTO.settextAboutUser(t[0]);
         voteDTO.setDate();

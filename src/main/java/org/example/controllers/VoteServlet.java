@@ -12,12 +12,15 @@ import java.util.Map;
 
 public class VoteServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
         Map<String,String[]> inputParams = req.getParameterMap();
 
         IVoteService service = VoteService.getInstance();
-        service.save(inputParams);
-
+        try{
+            service.save(inputParams);
+        } catch (Exception e){
+            throw new ServletException("Ошибка введенной информации");
+        }
 
 
     }

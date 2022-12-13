@@ -1,0 +1,44 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>M-JD2-95-22</display-name>
+    <servlet>
+        <servlet-name>ArtistServlet</servlet-name>
+        <servlet-class>org.example.controllers.ArtistServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ArtistServlet</servlet-name>
+        <url-pattern>/as</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GenreServlet</servlet-name>
+        <servlet-class>org.example.controllers.GenreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenreServlet</servlet-name>
+        <url-pattern>/gs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VoteServlet</servlet-name>
+        <servlet-class>org.example.controllers.VoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VoteServlet</servlet-name>
+        <url-pattern>/vs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StatisticsServlet</servlet-name>
+        <servlet-class>org.example.controllers.StatisticsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatisticsServlet</servlet-name>
+        <url-pattern>/ss</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
