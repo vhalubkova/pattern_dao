@@ -18,6 +18,14 @@ public class ArtistDAO {
     public ArrayList<ArtistDTO> getAll() {
         return artists;
     }
+    public boolean isArtistExists(int ID){
+        for(ArtistDTO artist:artists){
+            if(ID == artist.getID()){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     public static ArtistDAO getInstance() {

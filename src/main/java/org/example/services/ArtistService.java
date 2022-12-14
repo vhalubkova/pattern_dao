@@ -16,7 +16,6 @@ public class ArtistService implements IArtistService {
         return s;
     }
 
-
     public static ArtistService getInstance() {
         if (instance == null) {
             synchronized (ArtistService.class) {

@@ -24,6 +24,15 @@ public class GenreDAO {
         return genres;
     }
 
+    public boolean isGenreExists(int ID){
+        for(GenreDTO genre:genres){
+            if(ID == genre.getID()){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static GenreDAO getInstance(){
         if(instance == null){
             synchronized (GenreDAO.class){

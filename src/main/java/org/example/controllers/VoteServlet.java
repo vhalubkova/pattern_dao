@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class VoteServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String,String[]> inputParams = req.getParameterMap();
 
         IVoteService service = VoteService.getInstance();
@@ -20,6 +20,7 @@ public class VoteServlet extends HttpServlet {
             service.save(inputParams);
         } catch (Exception e){
             throw new ServletException("Ошибка введенной информации");
+            //resp.getWriter().write("exs:" + e.getMessage() + e);
         }
 
 
